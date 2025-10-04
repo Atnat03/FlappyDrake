@@ -1,0 +1,7 @@
+Un jeu ou on contrôle un dragon qui se déplace au travers d'un royaume infinie afin de trouver son œuf, il devra éviter les différents obstacles.
+
+les Obstacles sont de plus en rapides au fur et a mesure que l'on avance.
+
+Input :
+- on appuis : il monte.
+- on relache : il descend.
