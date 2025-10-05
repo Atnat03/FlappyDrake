@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class SpeedEgg : MoveableObjects
+public class RainbowEgg : MoveableObjects
 {
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.transform.CompareTag("Drake"))
         {
-            Debug.Log("Egg catch");
+            Debug.Log("Rainbow Egg catch");
             Destroy(gameObject);
         }
     }

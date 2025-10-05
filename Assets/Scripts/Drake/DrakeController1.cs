@@ -1,14 +1,31 @@
 using UnityEngine;
 
+public enum Gears
+{
+    VerySlow,
+    Slow,
+    Medium,
+    Fast,
+    VeryFast,
+    SpeedOfLight
+}
+
 public class DrakeController : MonoBehaviour
 {
-    [SerializeField] float speed = 4f;
+    public static DrakeController instance;    
+    [SerializeField] public Gears curGears;
+    [SerializeField] float[] gearsValue = {4,6,8,10,12,14};
+    float speed = 4f;
     [SerializeField] float ySpeed;
 
     DrakeInput drakeInput;
+    [SerializeField] SpeedUI speedUI;
+    public DragonStats stats;
 
     void Awake()
     {
+        instance = this;
+
         drakeInput = GetComponent<DrakeInput>();
 
         drakeInput.OnPressLeft += OnRise;
@@ -16,8 +33,14 @@ public class DrakeController : MonoBehaviour
         drakeInput.OnRelease += OnRelease;
     }
 
+    void Start()
+    {
+        curGears = Gears.VerySlow;
+        speedUI.UpdateUI((int)curGears);
+    }
+
     void OnDisable()
-    {        
+    {
         drakeInput.OnPressLeft -= OnRise;
         drakeInput.OnPressRight -= OnFall;
         drakeInput.OnRelease -= OnRelease;
@@ -34,14 +57,29 @@ public class DrakeController : MonoBehaviour
         transform.position = Camera.main.ViewportToWorldPoint(viewportPos);
     }
 
+    float GetCurSpeed()
+    {
+        return gearsValue[(int)curGears];
+    }
+
+    [ContextMenu("Get gear")]
+    public void AddGear()
+    {
+        if (curGears < Gears.SpeedOfLight)
+        {
+            curGears++;
+            speedUI.UpdateUI((int)curGears);
+        }
+    }
+
     void OnFall()
     {
-        ySpeed = -speed;
+        ySpeed = -GetCurSpeed();
     }
 
     void OnRise()
     {
-        ySpeed = speed;
+        ySpeed = GetCurSpeed();
     }
 
     void OnRelease()

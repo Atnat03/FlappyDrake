@@ -5,3 +5,18 @@ les Obstacles sont de plus en rapides au fur et a mesure que l'on avance.
 Input :
 - on appuis : il monte.
 - on relache : il descend.
+
+
+
+Item a récuperer : 
+- œuf de vitesse => 40
+- œuf de vie => 50
+- oeufs de bouclier =>
+- œuf d'invincibilité => 10
+- œuf de 2x de score =>
+- ecaille red => 150
+- ecaille verte => 80
+- ecaille jaune => 70
+- ecaille blue => 40
+- ecaille dark => 15
+ 

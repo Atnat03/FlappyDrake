@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MoveableObjects : MonoBehaviour
 {
-    public float speed = 3;
+    public float speed = 1.5f;
 
     protected void FixedUpdate()
     {
