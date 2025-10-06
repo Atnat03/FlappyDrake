@@ -7,17 +7,14 @@ public class Archer : MoveableObjects
     [SerializeField] Transform spawnArrow;
     [SerializeField] float arrowForce = 10f;
 
-    void Start()
+    bool hadThrown = false;
+    
+    void Update()
     {
-        StartCoroutine(SpawnLoop());
-    }
-
-    IEnumerator SpawnLoop()
-    {
-        while (true && transform.position.x >= DrakeController.instance.transform.position.x+4f)
+        if(transform.position.x <= DrakeController.instance.transform.position.x+3.5f && !hadThrown)
         {
-            yield return new WaitForSeconds(2.5f);
             ShootArrow();
+            hadThrown = true;
         }
     }
 

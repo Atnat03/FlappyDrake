@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class RainbowEgg : MoveableObjects
+public class x2Egg : MoveableObjects
 {
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.transform.CompareTag("Drake"))
         {
-            DrakeController.instance.stats.TakeInvinsibility();
+            DrakeController.instance.stats.Getx2();
             Destroy(gameObject);
         }
     }

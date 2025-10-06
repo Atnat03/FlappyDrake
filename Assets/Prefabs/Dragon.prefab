@@ -134,7 +134,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -1936267257, guid: 2317ebe9fd73cbc48b5c48bcab19fafc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -212,12 +212,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   curGears: 0
   gearsValue:
-  - 4
-  - 6
-  - 8
-  - 10
-  - 12
-  - 14
+  - 3
+  - 5
+  - 7
+  - 9
+  - 11
+  - 13
   ySpeed: 0
   speedUI: {fileID: 0}
   stats: {fileID: 7831124619179963599}
@@ -268,7 +268,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.3476835, y: -0.17869782}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -278,7 +278,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.52, y: 1.19}
+  m_Size: {x: 0.8896276, y: 0.7224598}
   m_EdgeRadius: 0
 --- !u!50 &4823480052195479554
 Rigidbody2D:
@@ -320,6 +320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentScore: 0
+  txtScore: {fileID: 0}
   currentHealth: 0
   maxHealth: 3
   ui: {fileID: 952834859424171076}

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public enum Gears
@@ -22,12 +23,15 @@ public class DrakeController : MonoBehaviour
     [SerializeField] SpeedUI speedUI;
     public DragonStats stats;
 
-    void Awake()
+    private void Awake()
     {
         instance = this;
 
         drakeInput = GetComponent<DrakeInput>();
+    }
 
+    void OnEnable()
+    {
         drakeInput.OnPressLeft += OnRise;
         drakeInput.OnPressRight += OnFall;
         drakeInput.OnRelease += OnRelease;

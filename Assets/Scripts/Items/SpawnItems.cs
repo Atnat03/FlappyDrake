@@ -13,9 +13,9 @@ public class SpawnItems : MonoBehaviour
 
     public List<Item> potentialBonusList = new();
 
-    public Vector2 rangeBetweenTwoItem = new Vector2(3, 5);
+    public Vector2 rangeBetweenTwoItem = new Vector2(0.5f, 3);
 
-    void Start()
+    void OnEnable()
     {
         StartCoroutine(SpawnLoop());
     }
