@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -6,11 +7,23 @@ using UnityEngine.UI;
 public class MenuManager : MonoBehaviour
 {
     [SerializeField] private Text ScoreText;
+    public AdsManager adsManager;
+
+    private void Start()
+    {
+        StartCoroutine(DisplayBannerWithDelay());
+    }
+
+    IEnumerator DisplayBannerWithDelay()
+    {
+        yield return new WaitForSeconds(1f);
+        adsManager.bannerAds.ShowBannerAd();
+    }
 
     public void GoToPlay()
     {
-        Debug.Log("Game");
         SceneManager.LoadScene("Game");
+        adsManager.bannerAds.HideBannerAd();
     }
 
     public void Quitter()
